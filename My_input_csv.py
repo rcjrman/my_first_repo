@@ -1,4 +1,5 @@
 import csv
+import glob
 
 with open('My_input.csv', 'rb') as f_in:
 	# don't seem to need the delimiter = ',', but still separates characters in output file
