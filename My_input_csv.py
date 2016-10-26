@@ -2,8 +2,8 @@ import csv
 import glob
 
 #bogus edit to experiment with github
-
-with open('My_input.csv', 'rb') as f_in:
+my_path = 'c:/Users/rafael.colon/Desktop/Data/Python/My_input.csv'
+with open(my_path, 'rb') as f_in:
 	# don't seem to need the delimiter = ',', but still separates characters in output file
 	reader_in = csv.reader(f_in, skipinitialspace = True) #skipinitialspace makes sure it inports number only.  Otherwise can import as a string.
 	
