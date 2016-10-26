@@ -1,5 +1,3 @@
-import csv
-import glob
 
 #bogus edit to experiment with github
 my_path = 'c:/Users/rafael.colon/Desktop/Data/Python/My_input.csv'
@@ -20,15 +18,4 @@ with open(my_path, 'rb') as f_in:
 f_in.closed
 
 
-'''
-import glob
-for filename in glob.glob('*.csv'):
-	#do something
-'''
 
-'''for row in reader:
-    for i, x in enumerate(row):
-                if len(x)< 1:
-                         x = row[i] = 0
-                print x
-'''				
