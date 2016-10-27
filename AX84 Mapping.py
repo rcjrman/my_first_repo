@@ -1,15 +1,30 @@
 import pandas	#Used to import into dataframe
 import warnings	#Using this to turn off warnings
 import glob		#Use Unix shell rules to find file names matching a pattern.
-import os
+import Tkinter as Tk
+import tkFileDialog
 
-warnings.simplefilter("ignore") #runs off UserWarning: Boolean Series key will be reindexed to match DataFrame index
+warnings.simplefilter("ignore") #Turns off UserWarning: Boolean Series key will be reindexed to match DataFrame index
 
+def browse_file():
+
+	root = Tk.Tk()
+	#fname = tkFileDialog.askopenfilename(filetypes = (("Template files", "*.type"), ("All files", "*")))
+	fname = tkFileDialog.askdirectory()
+	return fname
+	
 ####################################################################################
 # Look through a directory and save all the csv files in a list
-path = 'C:/Users/rafael.colon/Desktop/Data/AX84/CFAR/CFAR 40076977/'
+path = browse_file()
+path += '/'
 my_file = glob.glob(path + 'Format*.csv')	
 ####################################################################################
+
+
+print '/**********************************************/'
+print '/**************** Running *********************/'
+print '/**********************************************/'
+print ''
 
 for entry in my_file:
 	################################################################################
@@ -55,6 +70,13 @@ for entry in my_file:
 		[my_df['Bst Trim 5  '] == 3]\
 		[my_df['SAR  '] == 43]
 
-	print a
-	print '****************** END ************************'
-	print ""
+	if len(a) != 0:	
+		print '-----------------------------------------------'
+		print file_name
+		print '-----------------------------------------------'
+		print a
+		print ''
+		
+print '/**********************************************/'
+print '/**************** Complete ********************/'
+print '/**********************************************/'

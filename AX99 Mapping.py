@@ -20,11 +20,11 @@ path += '/'
 my_file = glob.glob(path + 'Format*.csv')	
 ####################################################################################
 
-####################################################################################
-# Look through a directory and save all the csv files in a list
-#path = 'C:/Users/rafael.colon/Desktop/Data/AX84/CFAR/CFAR 40076977/'
-#my_file = glob.glob(path + 'Format*.csv')	
-####################################################################################
+
+print '/**********************************************/'
+print '/**************** Running *********************/'
+print '/**********************************************/'
+print ''
 
 for entry in my_file:
 	################################################################################
@@ -36,9 +36,7 @@ for entry in my_file:
 	
 	file_name = entry[len(path):] 	#strip the path 
 	my_path = path + file_name		#add the path back with proper formatting.
-	print '-----------------------------------------------'
-	print file_name
-	print '-----------------------------------------------'
+	
 	my_df = pandas.read_csv(my_path)
 	my_df = my_df.fillna(-9999)		#fill all empty spaces with -9999
 
@@ -75,6 +73,13 @@ for entry in my_file:
 		[my_df['ALCEN_Option  '] == 1]\
 		[my_df['REV_ID_ILIM_Code  '] == 0]
 
-	print a
-	print '****************** END ************************'
-	print ""
+	if len(a) != 0:	
+		print '-----------------------------------------------'
+		print file_name
+		print '-----------------------------------------------'
+		print a
+		print ''
+		
+print '/**********************************************/'
+print '/**************** Complete ********************/'
+print '/**********************************************/'
