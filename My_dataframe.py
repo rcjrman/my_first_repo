@@ -21,9 +21,11 @@ for entry in my_file:
 	
 	file_name = entry[len(path):] 	#strip the path 
 	my_path = path + file_name		#add the path back with proper formatting.
+	
 	print '-----------------------------------------------'
 	print file_name
 	print '-----------------------------------------------'
+	
 	my_df = pandas.read_csv(my_path)
 	my_df = my_df.fillna(-9999)		#fill all empty spaces with -9999
 

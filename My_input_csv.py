@@ -2,6 +2,12 @@ import csv  #Use to import csv files
 import glob	#Use Unix shell rules to find file names matching a pattern.
 
 ####################################################################################
+# This takes a CSV file that's been converted from an STDF file and formats it into
+# a table.  It does this by stripping out the leading header information and leaving
+# behind only the test headings and data.
+####################################################################################
+
+####################################################################################
 # Look through a directory and save all the csv files in a list
 path = 'C:/Users/rafael.colon/Desktop/Data/AX84/CFAR/CFAR 40076977/'
 my_file = glob.glob(path + '*.csv')	
